@@ -1,4 +1,4 @@
-# Magicrepli
+# Openrepli
 
 Chrome extension - Just a simple connector to build Twitter/LinkedIn replies using GPT API, just add your api key and you're good to go.
 
