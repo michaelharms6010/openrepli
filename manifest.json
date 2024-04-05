@@ -20,6 +20,9 @@
    "manifest_version": 3,
    "name": "OpenRepli",
    "permissions": [ "storage" ],
+   "host_permissions": [
+      "https://api.openai.com/*"
+   ],
    "update_url": "https://clients2.google.com/service/update2/crx",
    "version": "0.1.0"
 }
