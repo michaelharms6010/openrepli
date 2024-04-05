@@ -1,0 +1,25 @@
+{
+   "action": {
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content.js" ],
+      "matches": [ "https://twitter.com/*", "https://mobile.twitter.com/*", "https://x.com/*", "https://pro.twitter.com/*", "https://www.linkedin.com/*" ],
+      "run_at": "document_idle"
+   } ],
+   "description": "Easy, customizable ego-disconnected replies on LinkedIn and Twitter, all in a single click. Drop in your OpenAI key and get started.",
+   "icons": {
+      "128": "logo_128.png",
+      "16": "logo_16.png",
+      "32": "logo_32.png",
+      "48": "logo_48.png"
+   },
+   "manifest_version": 3,
+   "name": "OpenRepli",
+   "permissions": [ "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.1.0"
+}

@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>OpenRepli</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-family: "Helvetica Neue";
+        background-color: #edf0fb;
+      }
+
+      p {
+        text-align: left;
+        font-weight: 500;
+      }
+
+      h3 {
+        letter-spacing: 0.025em;
+        font-weight: 500;
+      }
+
+      .main {
+        margin-top: 30px;
+      }
+
+      #hydrateImage {
+        width: 100px;
+        margin: 5px;
+      }
+
+      .credits {
+        margin-top: 40px;
+        text-align: right;
+        background-color: #6739fd3f;
+        padding: 4px 8px;
+        border-radius: 20px;
+        width: fit-content;
+        color: #2D907A;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      input, select, textarea {
+        margin: 0px;
+        outline: none;
+        border: none;
+        background-color: rgba(0, 0, 59, 0.05);
+        border-radius: 20px;
+        padding: 8px 10px;
+        width: 100%;
+        font-size: 12px;
+        letter-spacing: 0.025em;
+      }
+
+      button {
+        margin-top: 12px;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        background-color: #2D907A;
+        padding: 8px 14px;
+        color: white;
+        width: 100%;
+        letter-spacing: 0.025em;
+        margin-bottom: 20px;
+      }
+
+      textarea {
+        width: 200px;
+        height: 150px;
+        margin: 10px auto;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: #2D907Ae4;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body style="width: 200px; height: 350px" align="center">
+    <div class="container" align="center">
+      <div>
+        <h3>OpenRepli</h3>
+      </div>
+      <div class="main">
+        <p>GPT API Key</p>
+        <input
+        type="text"
+        id="gpt-api-key"
+        placeholder="Enter GPT API key"
+        spellcheck="false"
+        autocomplete="off"
+        />
+        <p>Model</p>
+        <select
+          id="gpt-model"
+        >
+          <option value="gpt-4-turbo-preview">GPT-4 Turbo (Requires ChatGPT Plus)</option>
+          <option value="gpt-3.5-turbo-0125">GPT-3.5 Turbo (Cheaper)</option>
+        </select>
+        <p>Custom Instructions</p>
+        <textarea
+          id="gpt-custom-instructions"
+          placeholder="Explain your desired posting style"
+        ></textarea>
+        <button id="save">Save<span class="save-success hidden">&nbsp;✅</span></button>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
