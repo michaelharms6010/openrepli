@@ -160,7 +160,7 @@ const tuningInstructions = `It is important your reply is not too formulaic. Kee
 
 async function getCustomInstructions() {
   const customInstructions = await chrome.storage.local.get(["gpt-custom-instructions"]);
-  return `${customInstructions ? `These instructions are extremely important. ${customInstructions["gpt-custom-instructions"]}` : ''}`
+  return `${customInstructions ? `These instructions are extremely important. ${customInstructions["gpt-custom-instructions"]}` : 'Be brief in your response, use 150 characters max and at most one emoji.'}`
 }
 
 async function buildTwitterPromptText(user, tweet) {
@@ -191,7 +191,11 @@ async function getChatCompletion(prompt) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${openaiApiKey}`
+      'Authorization': `Bearer ${openaiApiKey}`,
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Origin': 'https://api.openai.com',
+      'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+      'Access-Control-Allow-Headers': '*'
     },
     body: JSON.stringify({
       model: gptModel,
